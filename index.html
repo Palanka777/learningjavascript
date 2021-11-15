@@ -8,16 +8,28 @@
     <title>Document</title>
 </head>
 <body>
-    <button id="counter"></button>
+    <p id="counter"></p>
+    <button id="decrement">-</button>
+    <button id="increment">+</button>
+
     <script>
-        const counterBtn=document.getElementById('counter')
+        const counter=document.getElementById('counter')
+        const botoincrement=document.getElementById('increment')
+        const botodecrement=document.getElementById('decrement')
 
         function render(){
-            counterBtn.innerText = count
+            counter.innerText = count
         }
+
         let count=0
-        counterBtn.addEventListener('click', function incrementCounter() {
-            count = Number(counterBtn.innerText) +1
+
+        botoincrement.addEventListener('click', function incrementCounter() {
+            count = Number(counter.innerText) +1
+            render()
+        }),
+
+            botodecrement.addEventListener('click', function decrementCounter() {
+            count = Number(counter.innerText) -1
             render()
         })
 
